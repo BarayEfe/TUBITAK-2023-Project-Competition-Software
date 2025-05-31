@@ -81,7 +81,7 @@ mp_hands = mp.solutions.hands
 
 print("Current working directory:", os.getcwd())
 
-with open('src/data.json') as f:
+with open('data.json') as f:
     json_data = json.load(f)
     json_data = json_data["pages"]
 
@@ -96,7 +96,6 @@ with mp_hands.Hands(
     while cap.isOpened():
         success, frame = cap.read()
         # frame = cv2.flip(frame, 0)
-        frame = cv2.flip(frame, 1)
 
         if not success:
             print("Ignoring empty camera frame.")
